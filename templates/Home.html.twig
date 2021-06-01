@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/assets/css/MeP.css">
+    <script src="../public/assets/js/scriptNav.js"></script>
+    <title>Acceuil</title>
+</head>
+<body>
+<!-- Header -->
+{% include 'Header.html.twig' %}
+    <div class="newsletter">
+        <label for="email">Abonnez-vous à la newsletter pour suivre l'actualité de votre restaurant favori !</label>
+        <input name="email" type="email" class="mail">
+        <button><a href="#">Je m'abonne !</a></button>
+    </div>
+    <div class="bioHome">
+        <img src="#" alt="" class="bioHome">
+        <p>lorem50</p>
+    </div>
+    <div class="recetteHome">
+        <h3>Nos 3 plus grandes recettes</h3>
+        <ul>
+            <li>
+                <h4></h4>
+                <img src="" alt="">
+            </li>
+            <li>
+                <h4></h4>
+                <img src="" alt="">
+            </li>
+            <li>
+                <h4></h4>
+                <img src="" alt="">
+            </li>
+        </ul>
+    </div>
+
+<!-- Footer -->
+{% include 'Footer.html.twig' %}
+
+</body>
+
+</html>

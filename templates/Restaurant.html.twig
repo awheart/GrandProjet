@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/assets/css/MeP.css">
+
+    <title>Restaurant</title>
+</head>
+<body>
+<!-- Header -->
+{% include 'Header.html.twig' %}
+<div class="map">
+    <h3>Votre restaurant se situe ici :</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.40696973409!2d-0.6401518842486246!3d44.83364478331535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54d834933a6e51%3A0x46d1dbe8ab690d9f!2s208%20Avenue%20de%20la%20Marne%2C%2033700%20M%C3%A9rignac!5e0!3m2!1sfr!2sfr!4v1622556163020!5m2!1sfr!2sfr" width="30%" height="500" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+</div>
+<div class="horaire">
+    <h3>nos horaires :</h3>
+    <img src="" alt="">
+    <h3>Pour réserver : <a href="tel: 08 08 08 08 08">08 08 08 08 08</a></h3>
+</div>
+<div class="commentaire">
+    {% for c in commentaires %}
+        <commentaire>
+            <h2>{{ c.Pseudo }}</h2>
+            <p>{{ c.Date|date('d/m/y') }}</p>
+            <p>{{ c.Critique }}</p>
+        </commentaire>
+    {% endfor %}
+</div>
+
+
+<!-- Footer -->
+{% include 'Footer.html.twig' %}
+</body>
+<script src="../public/assets/js/scriptNav.js"></script>
+</html>
