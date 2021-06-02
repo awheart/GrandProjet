@@ -12,20 +12,22 @@
 <body>
 <!-- Header -->
 {% include 'Header.html.twig' %}
-<h3>Les Recettes du Blog Culinaire proposées par votre chef Louis Lamotte</h3>
-<div class="articles">
-    {% for a in articles %}
-    <article>
-        <h2>{{ a.Name }}</h2>
-        <p>{{ a.Date|date('d/m/y') }}</p>
-        <img src={{ asset('../public/assets/img/recette2.jpg') }} alt="">
-        <p>{{ a.Description }}</p>
-    </article>
-    {% endfor %}
-    <input type="text" class="admin">
-    <button hidden><a href={{ path('newArticle') }}>LOL</a></button>
-</div>
+<div class="wrap">
+    <h3>Les Recettes du Blog Culinaire proposées par votre chef Louis Lamotte</h3>
+    <div class="articles">
+        {% for a in articles %}
+        <article>
+            <h2>{{ a.Name }}</h2>
+            <p>Mise en ligne le {{ a.Date|date('d/m/y') }}</p>
+            <img src={{ asset('../public/assets/img/recette2.jpg') }} alt="">
+            <p class="description">{{ a.Description }}</p>
+        </article>
+        <div class="clear"></div>
+        {% endfor %}
 
+        <button><a href={{ path('newArticle') }}>Nouvelle recette</a></button>
+    </div>
+</div>
 <!-- Footer -->
 {% include 'Footer.html.twig' %}
 </body>

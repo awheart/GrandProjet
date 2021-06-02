@@ -12,23 +12,31 @@
 <body>
 <!-- Header -->
 {% include 'Header.html.twig' %}
+<main class="wrap">
+    <div class="chefBio">
+        <h4>Le Savoir Faire de notre Chef Cuisinier</h4>
+        <h2>Louis LAMOTTE</h2>
+        <img class="chef" src={{ asset("assets/img/chefcuisto.jpg")}} alt="">
+    </div>
 
-<div class="chefBio">
-    <h4>Le Savoir Faire de notre Chef Cuisinier</h4>
-    <h2>Louis LAMOTTE</h2>
-    <img src="" alt="">
-</div>
 
-<div class="ecoleChef">
-    <p>lorem50</p>
-    <img src="" alt="">
-</div>
 
-<div class="histoireRestau">
-    <img src="" alt="">
-    <p>lorem50</p>
-</div>
+    <div class="articleBio">
+        <h5>Sa formation :</h5>
+        <img src={{ asset("assets/img/hotel-talence.jpg")}} alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut commodi, cumque dignissimos dolores eos fuga porro provident quam quibusdam repudiandae ullam vitae! Ipsam molestiae praesentium qui quis quo quos recusandae repudiandae temporibus? Deserunt eum molestiae molestias necessitatibus obcaecati quas quisquam? Blanditiis cum et, impedit magnam molestias omnis provident quasi!</p>
+    </div>
+    <div class="clear"></div>
 
+
+
+    <div class="articleBio">
+        <h5>Son restaurant :</h5>
+        <img class="droite" src={{ asset("assets/img/restau.jpg")}} align="right" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid atque consequuntur corporis cum cumque eum eveniet fuga fugiat hic illo, praesentium provident quas quod repellat repudiandae rerum sapiente tempore ullam vel voluptatibus. Accusantium inventore natus omnis. A aliquid at dolorem placeat, quis sed tenetur! Accusantium aliquam ducimus harum iste laborum necessitatibus nisi, nobis officia perferendis praesentium quas quis quos repellat, saepe sapiente sunt vero. Aperiam doloremque error illo laboriosam natus quia sint! Dolor, dolorem excepturi harum ipsam laborum magnam!</p>
+    </div>
+    <div class="clear"></div>
+</main>
 <!-- Footer -->
 {% include 'Footer.html.twig' %}
 </body>

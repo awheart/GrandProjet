@@ -12,33 +12,37 @@
 <body>
 <!-- Header -->
 {% include 'Header.html.twig' %}
+<main class="wrap">
     <div class="newsletter">
         <label for="email">Abonnez-vous à la newsletter pour suivre l'actualité de votre restaurant favori !</label>
-        <input name="email" type="email" class="mail">
-        <button><a href="#">Je m'abonne !</a></button>
+        <br>
+        <input name="email" type="email" placeholder="abcde@gmail.com" class="mail">
+        <button class="btn newsltr"><a href="#">Je m'abonne !</a></button>
     </div>
     <div class="bioHome">
-        <img src="#" alt="" class="bioHome">
-        <p>lorem50</p>
+        <h2>~ Notre chef cuistot ~</h2>
+        <img src={{ asset("assets/img/chefcuisto.jpg")}} alt="" class="chef">
+        <h5>Son Histoire :</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores assumenda  explicabo in incidunt maiores non quas quidem rerum. A ab amet aperiam architecto corporis cumque doloremque dolores eum explicabo, facilis id iure placeat quaerat ut voluptate. A aliquid ducimus earum harum nisi placeat porro quas tempore ullam voluptas.</p>
     </div>
     <div class="recetteHome">
         <h3>Nos 3 plus grandes recettes</h3>
         <ul>
             <li>
-                <h4></h4>
-                <img src="" alt="">
+                <h4>Notre fameux gratin !</h4>
+                <img src={{ asset("assets/img/gratin1.jpg")}} alt="">
             </li>
             <li>
-                <h4></h4>
-                <img src="" alt="">
+                <h4>Notre Saumon en papillote</h4>
+                <img src={{ asset("assets/img/saumon1.jpg")}} alt="">
             </li>
             <li>
-                <h4></h4>
-                <img src="" alt="">
+                <h4>Notre Dorade Royale à la plancha</h4>
+                <img class="last" src={{ asset("assets/img/poisson1.jpg")}} alt="">
             </li>
         </ul>
     </div>
-
+</main>
 <!-- Footer -->
 {% include 'Footer.html.twig' %}
 
