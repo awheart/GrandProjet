@@ -21,6 +21,8 @@
             <p>Mise en ligne le {{ a.Date|date('d/m/y') }}</p>
             <img src={{ asset('../public/assets/img/recette2.jpg') }} alt="">
             <p class="description">{{ a.Description }}</p>
+            <button><a href={{ path("updateArticle",{'id':a.id}) }}>Modifier la recette</a></button>
+            <button><a href={{ path("deleteArticle",{'id':a.id}) }}>Supprimer la recette</a></button>
         </article>
         <div class="clear"></div>
         {% endfor %}

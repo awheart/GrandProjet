@@ -87,4 +87,42 @@ class AdminController extends abstractController
         return $this->render('NewArticle.html.twig', ['ArticleForm' => $form->createView()]);
     }
 
+    /**
+     * @Route("/UpdateArticle/{id}", name="updateArticle")
+     * modification articles
+     */
+    public function updateArticle(ArticleRepository $articleRepository, $id, EntityManagerInterface $entityManager, Request $request)
+    {
+        $article = $articleRepository->find($id);
+        $form = $this->createForm(ArticleType::class,$article);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $entityManager->persist($article);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('blog');
+
+        }
+        return $this->render('UpdateArticle.html.twig',[
+            'formulaire' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/DeleteArticle/{id}", name="deleteArticle")
+     * Suppression d'un article
+     */
+    public function deleteArticle($id, ArticleRepository $articleRepository, EntityManagerInterface $entityManager)
+    {
+        $article = $articleRepository->find($id);
+
+        $entityManager->remove($article);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('blog');
+
+    }
 }
