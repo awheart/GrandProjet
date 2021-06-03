@@ -6,19 +6,30 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../public/assets/css/MeP.css">
-    <script src="../public/assets/js/scriptNav.js"></script>
     <title>Acceuil</title>
 </head>
 <body>
 <!-- Header -->
 {% include 'Header.html.twig' %}
 <main class="wrap">
+
+
     <div class="newsletter">
-        <label for="email">Abonnez-vous à la newsletter pour suivre l'actualité de votre restaurant favori !</label>
-        <br>
-        <input name="email" type="email" placeholder="abcde@gmail.com" class="mail">
-        <button class="btn newsltr"><a href="#">Je m'abonne !</a></button>
+        <form id="form" method="POST">
+            <label for="email">Abonnez-vous à la newsletter pour suivre l'actualité de votre restaurant favori !</label>
+            <input name="email" type="email" placeholder="abcde@gmail.com" class="mail">
+            <div class="error"></div>
+            <button class="btn newsltr" type="submit">Je m'abonne !</button>
+            <div class="clear"></div>
+        </form>
+        <div class="modal">
+            <div class="modal-content">
+                <p>Merci de vous être abonner à la newsletter, vérifier votre boite mail</p>
+            </div>
+        </div>
     </div>
+
+
     <div class="bioHome">
         <h2>~ Notre chef cuistot ~</h2>
         <img src={{ asset("assets/img/chefcuisto.jpg")}} alt="" class="chef">
@@ -45,6 +56,7 @@
 </main>
 <!-- Footer -->
 {% include 'Footer.html.twig' %}
+<script src={{ asset("assets/js/scriptForm.js") }}></script>
 
 </body>
 

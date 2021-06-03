@@ -6,17 +6,22 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../public/assets/css/MeP.css">
-    <script src="../public/assets/js/scriptNav.js"></script>
+    <script src="../public/assets/js/script.js"></script>
 
     <title>Contact</title>
 </head>
 <body>
 <!-- Header -->
 {% include 'Header.html.twig' %}
-<main class="wrap">
-<img src="" alt="">
-    <div class="formContact">
-    {{ form(CommentaireForm) }}
+<main class="wrap contacthauteur">
+        <div class="back">
+            <div class="contactdiv">
+                <h2 class="pres">La préstation vous a plu ? Dites nous ce que vous en avez pensé !</h2>
+                <div class="formContact">
+                    {{ form(CommentaireForm) }}
+                </div>
+            </div>
+
     </div>
 </main>
 <!-- Footer -->

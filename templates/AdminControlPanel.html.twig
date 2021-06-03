@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href={{ asset('assets/css/MeP.css') }}>
+
+    <title>Config Admin</title>
+</head>
+<body>
+
+
+
+<!-- Header -->
+{% include 'Header.html.twig' %}
+<main class="wrap">
+    <!-- Les recettes -->
+<div class="articles">
+    <h2>Administration des recettes</h2>
+    {% for a in articles %}
+        <article>
+            <h2>{{ a.Name }}</h2>
+            <p>Mise en ligne le {{ a.Date|date('d/m/y') }}</p>
+            <button class="updatebtn"><a href={{ path("updateArticle",{'id':a.id}) }}>Modifier la recette</a></button>
+            <div class="clear"></div>
+            <img src={{ asset('../public/assets/img/recette2.jpg') }} alt="">
+            <p class="description">{{ a.Description }}</p>
+
+            <div class="delbox">
+                <h3>Autoriser la suppresion</h3>
+                <input type="checkbox" id="delCheckArt">
+            </div>
+
+
+            <div class="del-box-Art">
+                <button class="deletebtn"><a href={{ path("deleteArticle",{'id':a.id}) }}>Supprimer la recette</a></button>
+            </div>
+        </article>
+        <div class="clear"></div>
+    {% endfor %}
+
+    <button><a href={{ path('newArticle') }}>Nouvelle recette</a></button>
+</div>
+
+<!-- Les commentaires -->
+<h2>Administration des commentaires</h2>
+    <label for="delCheckCom">Admin delete</label>
+    <input type="checkbox" id="delCheckCom">
+<div class="commentaire">
+    <h2>Les commentaires des clients :</h2>
+
+
+
+    {% for c in commentaires %}
+        <div class="commentaires">
+            <h2>{{ c.Pseudo }}</h2>
+            <p>le {{ c.Date|date('d/m/y') }}</p>
+            <p>{{ c.Critique }}</p>
+            <div class="del-box-Com">
+                <button class="deletebtn delCom"><a href={{ path("deleteCommentaire",{'id':c.id}) }}>Supprimer le commentaire</a></button>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+    {% endfor %}
+    <div class="clear"></div>
+</div>
+</main>
+<!-- Footer -->
+{% include 'Footer.html.twig' %}
+<script src={{ asset("assets/js/script.js") }}></script>
+</body>
+</html>

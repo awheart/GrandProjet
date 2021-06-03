@@ -11,6 +11,14 @@ body
 .clear{
     clear: both;
 }
+.adminbtn
+{
+    float: right;
+    margin-right: 10px;
+}
+.adminbtn a{
+    color: #1c0062;
+}
 header
 {
     text-align: center;
@@ -27,6 +35,17 @@ header h2 {
     font-size: 24px;
     margin-top: 5px;
     margin-left: -30px;
+}
+.error p
+{
+    font-size: 16px;
+    color: red;
+}
+
+.newsltr:hover
+{
+    cursor: pointer;
+    color: #FFFFFF;
 }
 .logo
 {
@@ -91,12 +110,20 @@ nav li:hover
     border: 5px #1c0062;
     border-style: double;
     width: 960px;
+    height: 100%;
     margin: auto;
     margin-bottom: 60px;
 
 }
+.wrap h2
+{
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
 .newsletter
 {
+    text-align: left;
     margin-top: 15px;
     padding: 20px 0 20px 0;
     border-top: solid 2px #5eb5e0;
@@ -112,6 +139,11 @@ nav li:hover
     margin-top: -10px;
     margin-left: 175px;
 }
+.newsltr
+{
+    margin-top: -50px;
+    float: right;
+}
 .mail
 {
     height: 20px;
@@ -119,7 +151,7 @@ nav li:hover
 }
 button a{
     text-decoration: none;
-    color: #fff;
+    color: #1c0062;
 }
 .bioHome
 {
@@ -165,6 +197,10 @@ button a{
 {
     display: inline-block;
     list-style: none;
+}
+.modal
+{
+    display: none;
 }
 /*------------------------------------------*/
 
@@ -263,18 +299,94 @@ article
 
 /*------------------------------------------*/
 
-/* Contact */
-.formContact input[type="text"]
+/* form */
+input[type="text"]
 {
     width: 500px;
 }
-.formContact textarea
+textarea
 {
+    margin: 10px 0 20px 0;
     width: 500px;
+    height: 100px;
     resize: none;
+}
+.contacthauteur label
+{
+    text-decoration: underline;
+    left: 150px;
+    position: relative;
+    float: left;
+}
+.updatebtn, .deletebtn
+{
+
+    float: right;
+}
+.deletebtn
+{
+    position: relative;
+    bottom: 10px;
+}
+.delCom
+{
+    margin-top: 15px;
+    float: none;
+}
+.del-box-Art
+{
+    display: none;
+}
+.del-box-Com
+{
+    display: none;
 }
 
 /*------------------------------------------*/
+
+/* admin */
+.articles
+{
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: double 2px #1c0062;
+}
+.delbox
+{
+    float: right;
+}
+/*------------------------------------------*/
+
+/* contact */
+.contacthauteur{
+    height: 380px;
+}
+.back
+{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150px;
+    margin: 0;
+    background-image: url("../img/bord-de-mer.jpg");
+}
+.contactdiv h2
+{
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: white;
+    padding: 5px 3px 5px 3px;
+    background-color: #5eb5e0;
+    border-radius: 15px;
+}
+.contactdiv {
+    top: 120px;
+    position: relative;
+}
+
+/*------------------------------------------*/
+
 /* footer */
 footer
 {

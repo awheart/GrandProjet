@@ -63,9 +63,23 @@ class AdminController extends abstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager -> persist($commentaire);
             $entityManager ->flush();
+            return $this->redirectToRoute('restaurant');
         }
 
         return $this->render('Contact.html.twig', ['CommentaireForm' => $form->createView()]);
+    }
+
+    /**
+     * @Route("/Admin", name="adminControlPanel")
+     */
+    public function adminControlPanel(ArticleRepository $articleRepository, CommentaireRepository $commentaireRepository)
+    {
+        $articles = $articleRepository->findAll();
+        $commentaires = $commentaireRepository->findAll();
+        return $this->render('AdminControlPanel.html.twig', [
+            'articles' => $articles,
+            'commentaires' => $commentaires
+        ]);
     }
 
     /**
@@ -83,12 +97,14 @@ class AdminController extends abstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager -> persist($article);
             $entityManager ->flush();
+
+            return $this->redirectToRoute('adminControlPanel');
         }
         return $this->render('NewArticle.html.twig', ['ArticleForm' => $form->createView()]);
     }
 
     /**
-     * @Route("/UpdateArticle/{id}", name="updateArticle")
+     * @Route("/Admin/UpdateArticle/{id}", name="updateArticle")
      * modification articles
      */
     public function updateArticle(ArticleRepository $articleRepository, $id, EntityManagerInterface $entityManager, Request $request)
@@ -103,7 +119,7 @@ class AdminController extends abstractController
             $entityManager->persist($article);
             $entityManager->flush();
 
-            return $this->redirectToRoute('blog');
+            return $this->redirectToRoute('adminControlPanel');
 
         }
         return $this->render('UpdateArticle.html.twig',[
@@ -112,7 +128,7 @@ class AdminController extends abstractController
     }
 
     /**
-     * @Route("/DeleteArticle/{id}", name="deleteArticle")
+     * @Route("/Admin/DeleteArticle/{id}", name="deleteArticle")
      * Suppression d'un article
      */
     public function deleteArticle($id, ArticleRepository $articleRepository, EntityManagerInterface $entityManager)
@@ -122,7 +138,22 @@ class AdminController extends abstractController
         $entityManager->remove($article);
         $entityManager->flush();
 
-        return $this->redirectToRoute('blog');
+        return $this->redirectToRoute('adminControlPanel');
+
+    }
+
+    /**
+     * @Route("/Admin/DeleteCommentaire/{id}", name="deleteCommentaire")
+     * Suppression d'un commentaire
+     */
+    public function deleteCommentaire($id, CommentaireRepository  $commentaireRepository, EntityManagerInterface $entityManager)
+    {
+        $commentaire = $commentaireRepository->find($id);
+
+        $entityManager->remove($commentaire);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('adminControlPanel');
 
     }
 }

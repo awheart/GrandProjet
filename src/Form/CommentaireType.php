@@ -26,3 +26,4 @@ class CommentaireType extends AbstractType
         ]);
     }
 }
+?>

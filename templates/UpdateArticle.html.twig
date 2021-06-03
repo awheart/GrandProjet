@@ -12,7 +12,7 @@
 <body>
 <!-- Header -->
 {% include 'Header.html.twig' %}
-
+<main class="wrap">
 {% block content %}
 
     <h2>Modification d'un article</h2>
@@ -20,23 +20,19 @@
     {{ form_start(formulaire) }}
 
     <div>
-        {{ form_label(formulaire.Name,"Intitulé de la recette'") }}
+        {{ form_label(formulaire.Name,"Intitulé de la recette") }}
         {{ form_widget(formulaire.Name) }}
     </div>
 
     <div>
-        {{ form_label(formulaire.Description,"Le contenu de l'article'") }}
+        {{ form_label(formulaire.Description,"Le contenu de l'article") }}
         {{ form_widget(formulaire.Description) }}
-    </div>
-
-    <div>
-        <button type="submit">Mettre à jour</button>
     </div>
 
     {{ form_end(formulaire) }}
 
 {% endblock %}
-
+</main>
 <!-- Footer -->
 {% include 'Footer.html.twig' %}
 
